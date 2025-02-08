@@ -4,32 +4,45 @@
 // Desafio Batalha Naval - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
 // Siga os comentários para implementar cada parte do desafio.
+#define linhas 10
+#define colunas 10
 
 int main() {
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    int tabuleiro[5][5] = {
+    int tabuleiro[linhas][colunas] = {
         
-        {1,0,0,0,0},
-        {1,0,1,1,1},
-        {1,0,0,0,0},
-        {0,0,0,0,0},
-        {0,0,0,0,0}
+        {3,0,0,0,0,0,0,0,0,0},
+        {3,0,3,3,3,0,0,0,0,0},
+        {3,0,0,0,0,0,0,0,0,0},
+        {0,0,3,3,3,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,3,0,0,0,0,0,0},
+        {0,3,0,0,3,0,0,0,0,0},
+        {0,0,3,0,0,3,0,0,0,0},
+        {0,0,0,3,0,0,0,0,0,0},
+        {0,0,3,3,3,0,0,0,0,0}    
     };
     int i, j;
+    int soma = 0;
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
 
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
-    printf("Posição do navil na horizontal e (1, 2)(1,3)(1,4) e na vertical (0,0)(1,0)(2,0)\n");
-    for(i = 0; i < 5; i++){
-        for(j = 0; j < 5; j++){
-            if(tabuleiro[i][j] == 1){
+    printf("Posição do navil na horizontal e ((1, 2)(1,3)(1,4)), (()()()) e na vertical (0,0)(1,0)(2,0)\n");
+    for(i = 0; i < linhas; i++){
+        for(j = 0; j < colunas; j++){
+            if(tabuleiro[i][j] != 0){
                 printf("Cordenadas de partes de navil (%d,%d) \n", i, j);
             }
 
         }
     }
-    
+    for(i = 0; i < linhas; i++){
+        for(j = 0; j < colunas; j++){
+            printf("%d ", tabuleiro[i][j]);
+        }
+        printf("\n");
+    }
 
     // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
     // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
