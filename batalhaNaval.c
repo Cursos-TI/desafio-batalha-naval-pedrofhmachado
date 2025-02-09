@@ -10,6 +10,21 @@
 int main() {
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
+    int matrizCone[3][5] = {
+        {0,0,1,0,0},
+        {0,1,1,1,0},
+        {1,1,1,1,1}
+    };
+    int matrizoctaedro[3][5] = {
+        {0,0,1,0,0},
+        {0,1,1,1,0},
+        {0,0,1,0,0}
+    };
+    int matrizCruz[3][5] = {
+        {0,0,1,0,0},
+        {1,1,1,1,1},
+        {0,0,1,0,0}
+    };
     int tabuleiro[linhas][colunas] = {
         
         {3,0,0,0,0,0,0,0,0,0},
@@ -23,22 +38,22 @@ int main() {
         {0,0,0,3,0,0,0,0,0,0},
         {0,0,3,3,3,0,0,0,0,0}    
     };
-    int i, j;
+    
     int soma = 0;
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
 
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
     printf("Posição do navil na horizontal e ((1, 2)(1,3)(1,4)), (()()()) e na vertical (0,0)(1,0)(2,0)\n");
-    for(i = 0; i < linhas; i++){
-        for(j = 0; j < colunas; j++){
+    for(int i = 0; i < linhas; i++){
+        for(int j = 0; j < colunas; j++){
             if(tabuleiro[i][j] != 0){
                 printf("Cordenadas de partes de navil (%d,%d) \n", i, j);
             }
 
         }
     }
-    for(i = 0; i < linhas; i++){
-        for(j = 0; j < colunas; j++){
+    for(int i = 0; i < linhas; i++){
+        for(int j = 0; j < colunas; j++){
             printf("%d ", tabuleiro[i][j]);
         }
         printf("\n");
@@ -60,15 +75,34 @@ int main() {
     // 0 1 1 1 0
     // 1 1 1 1 1
     
+    printf("\n Matriz Cone \n");
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 5; j++){
+            printf("%d ", matrizCone[i][j]);
+        }
+        printf("\n");
+    }
     // Exemplo para habilidade em octaedro:
     // 0 0 1 0 0
     // 0 1 1 1 0
     // 0 0 1 0 0
-
+    printf("\n Matriz Octaedro \n");
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 5; j++){
+            printf("%d ", matrizoctaedro[i][j]);
+        }
+        printf("\n");
+    }
     // Exemplo para habilidade em cruz:
     // 0 0 1 0 0
     // 1 1 1 1 1
     // 0 0 1 0 0
-
+    printf("\n Matriz Cruz \n");
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 5; j++){
+            printf("%d ", matrizCruz[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
